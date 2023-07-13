@@ -19,5 +19,5 @@ spec:
         image: bhuvana98/dotnetdemo
         ports:
         - containerPort: 5000
-      imagespullsecrets:
+      imagepullsecrets:
       - name: acr-secret
