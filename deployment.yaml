@@ -15,9 +15,7 @@ spec:
         app: dotnetdemo
     spec:
       containers:
-      - name: dotnetdemo
-        image: bhuvana98/dotnetdemo
-        ports:
-        - containerPort: 5000
-      imagepullsecrets:
-      - name: acr-secret
+        - name: my-container
+          image: my-image
+      imagePullSecrets:
+        - name: my-secret
