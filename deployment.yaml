@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dotnetdemo-deployment 
+  labels:
+    app: dotnetdemo
+  namespace: bhuvana
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: dotnetdemo
+  template:
+    metadata:
+      labels:
+        app: dotnetdemo
+    spec:
+      containers:
+      - name: dotnetdemo
+        image: bhuvana98/dotnetdemo
+        ports:
+        - containerPort: 5000
+      imagespullsecrets:
+      - name: acr-secret
