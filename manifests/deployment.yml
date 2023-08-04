@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: ponugotidocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ponugotidocker
+  template:
+    metadata:
+      labels:
+        app: ponugotidocker 
+    spec:
+      containers:
+        - name: ponugotidocker 
+          image: 31assigncon.azurecr.io/ponugotidocker
+          ports:
+          - containerPort: 5000
